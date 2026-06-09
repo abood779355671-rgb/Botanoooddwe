@@ -1,3 +1,4 @@
+```python
 import os
 import asyncio
 import logging
@@ -28,7 +29,7 @@ def _get_ydl_base_opts(temp_dir: str, extra: Dict = None) -> Dict:
             ),
         },
         "noplaylist": True,
-        "cookiefile": "/app/cookies.txt",
+        "cookiefile": "/etc/secrets/cookies.txt",
     }
     if extra:
         opts.update(extra)
@@ -133,7 +134,6 @@ class YouTubeService:
     def _download(self, url: str, opts: Dict, temp_dir: str, uid: str, ext: str = None) -> Optional[str]:
         with yt_dlp.YoutubeDL(opts) as ydl:
             ydl.download([url])
-        # Find downloaded file
         for fname in os.listdir(temp_dir):
             if fname.startswith(uid):
                 fpath = os.path.join(temp_dir, fname)
@@ -398,3 +398,4 @@ tiktok_service = TikTokService()
 twitter_service = TwitterService()
 soundcloud_service = SoundCloudService()
 pinterest_service = PinterestService()
+```
