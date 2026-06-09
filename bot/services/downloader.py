@@ -1,4 +1,3 @@
-```python
 import os
 import asyncio
 import logging
@@ -398,4 +397,3 @@ tiktok_service = TikTokService()
 twitter_service = TwitterService()
 soundcloud_service = SoundCloudService()
 pinterest_service = PinterestService()
-```
