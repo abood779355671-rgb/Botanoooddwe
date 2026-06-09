@@ -28,6 +28,7 @@ def _get_ydl_base_opts(temp_dir: str, extra: Dict = None) -> Dict:
             ),
         },
         "noplaylist": True,
+        "cookiefile": "/app/cookies.txt",
     }
     if extra:
         opts.update(extra)
